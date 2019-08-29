@@ -1,0 +1,1 @@
+# centos7_init_sh
