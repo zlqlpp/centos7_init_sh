@@ -1,3 +1,3 @@
 #!/bin/bash
 
-yum install -y wget curl vim sed tsar 
+yum install -y wget curl vim sed tsar  epel-release
