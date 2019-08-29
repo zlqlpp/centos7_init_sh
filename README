@@ -1,4 +1,5 @@
 # centos7_init_sh
+#创建vps,  使用centos7的系统，，之后需要安装一些基础软件，换开一些服务和关闭一些服务
 
 1.install 
     yum install -y wget ;
