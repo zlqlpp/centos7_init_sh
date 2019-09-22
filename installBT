@@ -5,7 +5,7 @@ yum install -y wget curl vim sed tsar  epel-release unzip;
 yum install tranmission transmission-daemon -y;
 
 systemctl start transmission-daemon.service; 
-systemctl stop transmission-daemon.service;
+systemctl stop transmission-daemon.service; 
 
 
 sed -i '/rpc-authentication-required/c "rpc-authentication-required": true,' /var/lib/transmission/.config/transmission-daemon/settings.json ;
