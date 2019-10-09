@@ -17,6 +17,7 @@ printhelp(){
 	readinput
 }
 
+##添加一些命令别名使操作更快捷
 fastcmd(){
 	if ! test -d ~/.zlq/ 
 		then 
@@ -34,17 +35,14 @@ fastcmd(){
 }
 
 
-#更换内核
+#更换内核，来安装锐速
 chnkrl(){
-#centos7 x64 os
-#换内核
 yum install -y wget;   
 wget --no-check-certificate -O rskernel.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/rskernel.sh && bash rskernel.sh
 }
 
-#锐速
+#锐速 #一路回车 使用默认值安装即可
 ruisu(){
-#一路回车
 yum install net-tools -y && wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && bash appex.sh install
 
 #启动： /serverspeeder/bin/serverSpeeder.sh start
@@ -186,7 +184,7 @@ readinput(){
 		exit
 		;;
 		*)
-		echo 'wrong'
+		echo '请输入有效的命令'
 		
 	esac
 
