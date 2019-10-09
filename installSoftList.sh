@@ -127,6 +127,9 @@ readinput(){
 		chn)
 		chn
 		;;
+		ss)
+		ss
+		;;
 		*)
 		echo 'wrong'
 		
