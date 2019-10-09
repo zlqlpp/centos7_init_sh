@@ -1,5 +1,10 @@
 #! /bin/bash
 
+printhelp(){
+
+	echo 'init 安装wget vim sed epel-release gcc等'
+
+}
 
 ##开发套件
 init(){
@@ -12,15 +17,13 @@ init(){
 ##读取用户输入
 readinput(){
 
-	echo '1 初始化centos服务器，安装基础软件'
-
 	read -p "enter number:" no
 	#read -p "enter name:" name
 	#echo you have entered $no, $name
 
 
 	case $no in 
-		1)
+		init)
 		init 
 		;;
 		2)
@@ -33,6 +36,7 @@ readinput(){
 
 }
 
+printhelp
 readinput
 
 #echo $LANG可以查看当前使用的系统语言
