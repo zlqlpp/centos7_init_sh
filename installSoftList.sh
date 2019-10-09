@@ -16,7 +16,7 @@ printhelp(){
 }
 
 fastcmd(){
-	if !test -d ~/.zlq/ 
+	if ! test -d ~/.zlq/ 
 		then 
 	mkdir ~/.zlq/
 	fi
