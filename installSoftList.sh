@@ -1,9 +1,12 @@
 #! /bin/bash
 
 printhelp(){
-
+	echo '########################################'
 	echo 'init 安装wget vim sed epel-release gcc等'
-
+	echo 'help 显示帮助'
+	
+	
+	echo '########################################'
 }
 
 ##开发套件
@@ -26,8 +29,8 @@ readinput(){
 		init)
 		init 
 		;;
-		2)
-		echo '222'
+		help)
+		echo 'printhelps'
 		;;
 		*)
 		echo 'wrong'
