@@ -7,6 +7,8 @@ printhelp(){
 	echo 'chn 安装中文字体,安装完成请重连'
 	
 	echo '########################################'
+	
+	readinput
 }
 
 ##开发套件
@@ -15,6 +17,8 @@ init(){
 	yum groupinstall 'Development Tools' -y ;                  #安装开发工具
 	service crond start;                                       #启动crontable
 	setenforce 0;                                              #关闭  selinux
+	
+	readinput
 }
 ##安装中文
 chn(){
@@ -34,6 +38,7 @@ chn(){
 	#安装中文字体
 	yum install ibus-table-chinese*
 	#重新连接终端即可
+	readinput
 
 }
 ##读取用户输入
@@ -50,7 +55,10 @@ readinput(){
 		init 
 		;;
 		help)
-		echo 'printhelp'
+		printhelp
+		;;
+		chn)
+		chn
 		;;
 		*)
 		echo 'wrong'
