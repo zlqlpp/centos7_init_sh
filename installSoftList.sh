@@ -31,7 +31,7 @@ fastcmd(){
 chnkrl(){
 #centos7 x64 os
 #换内核
-yum install -y wget;
+yum install -y wget;   
 wget --no-check-certificate -O rskernel.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/rskernel.sh && bash rskernel.sh
 }
 
