@@ -1,7 +1,7 @@
 #! /bin/bash
 
 
-
+##开发套件
 init(){
 	yum install -y wget curl vim sed tsar  epel-release unzip; #安装下载，文本处理，系统监控，第三方源
 	yum groupinstall 'Development Tools' -y ;                  #安装开发工具
@@ -9,26 +9,31 @@ init(){
 	setenforce 0;                                              #关闭  selinux
 }
 
+##读取用户输入
+readinput(){
 
-echo '1 初始化centos服务器，安装基础软件'
+	echo '1 初始化centos服务器，安装基础软件'
 
-read -p "enter number:" no
-#read -p "enter name:" name
-#echo you have entered $no, $name
+	read -p "enter number:" no
+	#read -p "enter name:" name
+	#echo you have entered $no, $name
 
 
-case $no in 
-	1)
-	init 
-	;;
-	2)
-	echo '222'
-	;;
-	*)
-	echo 'wrong'
-	
-esac
+	case $no in 
+		1)
+		init 
+		;;
+		2)
+		echo '222'
+		;;
+		*)
+		echo 'wrong'
+		
+	esac
 
+}
+
+readinput
 
 #echo $LANG可以查看当前使用的系统语言
 #locale命令，如有zh cn 表示已经安装了中文语言
