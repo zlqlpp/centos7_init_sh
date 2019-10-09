@@ -2,6 +2,7 @@
 
 ####################打印帮助
 printhelp(){
+	clear
 	echo '########################################'
 	echo 'init 	 安装wget vim sed epel-release gcc等'
 	echo 'help 	 显示帮助'
@@ -29,6 +30,7 @@ fastcmd(){
 	echo "alias welcome='source ~/.bash_profile'"  >> ~/.bash_profile
 	echo "alias monitor='bash ~/.zlq/s_ssMonitor_netstat_iptables.sh'" >> ~/.bash_profile
 	echo "alias setiptables='bash ~/.zlq/set-iptables.sh'" >> ~/.bash_profile
+	source ~/.bash_profile
 }
 
 
@@ -100,6 +102,7 @@ pushd shadowsocks-libev;
 ./autogen.sh;
 ./configure --prefix=/usr && make ;
 make install;
+popd;
 rm -rf shadowsocks-;
 #5 shadowsocks-libev 配置文件
 mkdir /etc/shadowsocks;
