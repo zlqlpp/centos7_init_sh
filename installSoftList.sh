@@ -7,7 +7,7 @@ printhelp(){
 	echo 'help 显示帮助'
 	echo 'chn 安装中文字体,安装完成请重连'
 	echo 'ss 安装ss-server服务端,默认启动端口1521，密码123456,加密aes-256-gcm'
-	echo 'ss 安装锐速,需要一路点击回车'
+	echo 'ruisu 安装锐速,需要一路点击回车'
 	echo '########################################'
 	
 	readinput
