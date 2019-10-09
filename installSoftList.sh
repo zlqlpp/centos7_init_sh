@@ -3,32 +3,40 @@
 ####################打印帮助
 printhelp(){
 	echo '########################################'
-	echo 'init 安装wget vim sed epel-release gcc等'
-	echo 'help 显示帮助'
-	echo 'chn 安装中文字体,安装完成请重连'
-	echo 'ss 安装ss-server服务端,默认启动端口1521，密码123456,加密aes-256-gcm'
-	echo 'ruisu 安装锐速,需要一路点击回车'
+	echo 'init 	 安装wget vim sed epel-release gcc等'
+	echo 'help 	 显示帮助'
+	echo 'chn  	 安装中文字体,安装完成请重连'
+	echo 'ss     安装ss-server服务端,默认启动端口1521，密码123456,加密aes-256-gcm'
+	echo 'chnkrl  更换内核来安装锐速，更换内核后会重启'
+	echo 'ruisu  安装锐速（需要先更换内核心，执行chnkrl命令)，默认一路回车即可'
+	echo 'fastcmd  快捷命令，如welcome加载bash_profile等'
 	echo '########################################'
 	
 	readinput
 }
 
-#锐速
-ruisu(){
-	
+fastcmd(){
+
+	echo 'alias welcome=\'source ~/.bash_profile \\''  >> ~/.bash_profile
+}
+
+
+#更换内核
+chnkrl(){
 #centos7 x64 os
 #换内核
 yum install -y wget;
 wget --no-check-certificate -O rskernel.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/rskernel.sh && bash rskernel.sh
+}
 
+#锐速
+ruisu(){
 #一路回车
 yum install net-tools -y && wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && bash appex.sh install
 
-#启动：
-/serverspeeder/bin/serverSpeeder.sh start
+#启动： /serverspeeder/bin/serverSpeeder.sh start
 #停止：/serverspeeder/bin/serverSpeeder.sh stop
-#状态：
-service serverSpeeder status
+#状态： service serverSpeeder status
 #检查是否有appex0模块：lsmod
 }
 
@@ -150,6 +158,9 @@ readinput(){
 		;;
 		ss)
 		ss
+		;;
+		chnkrl)
+		chnkrl
 		;;
 		ruisu)
 		ruisu
