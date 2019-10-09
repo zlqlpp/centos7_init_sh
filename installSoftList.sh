@@ -165,6 +165,9 @@ readinput(){
 		ruisu)
 		ruisu
 		;;
+		fastcmd)
+		fastcmd
+		;;
 		*)
 		echo 'wrong'
 		
