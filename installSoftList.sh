@@ -7,11 +7,32 @@ printhelp(){
 	echo 'help 显示帮助'
 	echo 'chn 安装中文字体,安装完成请重连'
 	echo 'ss 安装ss-server服务端,默认启动端口1521，密码123456,加密aes-256-gcm'
+	echo 'ss 安装锐速,需要一路点击回车'
 	echo '########################################'
 	
 	readinput
 }
 
+#锐速
+ruisu(){
+	
+#centos7 x64 os
+#换内核
+yum install -y wget;
+wget --no-check-certificate -O rskernel.sh https://raw.githubusercontent.com/uxh/shadowsocks_bash/master/rskernel.sh && bash rskernel.sh
+
+#一路回车
+yum install net-tools -y && wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && bash appex.sh install
+
+#启动：
+/serverspeeder/bin/serverSpeeder.sh start
+#停止：/serverspeeder/bin/serverSpeeder.sh stop
+#状态：
+service serverSpeeder status
+#检查是否有appex0模块：lsmod
+}
+
+##ss-server服务端安装，并启动一个进程 
 ss(){
 #1.删除旧版本依赖库
 rm -rf libsodium-* mbedtls-* simple-obfs shadowsocks-libev
@@ -129,6 +150,9 @@ readinput(){
 		;;
 		ss)
 		ss
+		;;
+		ruisu)
+		ruisu
 		;;
 		*)
 		echo 'wrong'
