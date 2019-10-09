@@ -21,7 +21,7 @@ fastcmd(){
 	wget https://raw.githubusercontent.com/zlqlpp/centos7_init_sh/master/s_ssMonitor_netstat_iptables.sh
 	wget https://raw.githubusercontent.com/zlqlpp/centos7_init_sh/master/set-iptables.sh
 	 
-	echo 'alias welcome='source ~/.bash_profile''  >> ~/.bash_profile
+	echo 'alias welcome=\\'source ~/.bash_profile\\''  >> ~/.bash_profile
 	echo 'alias monitor='bash ~/.zlq/s_ssMonitor_netstat_iptables.sh'' >> ~/.bash_profile
 	echo 'alias setiptables='bash ~/.zlq/set-iptables.sh'' >> ~/.bash_profile
 }
