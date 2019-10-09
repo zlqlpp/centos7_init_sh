@@ -44,7 +44,7 @@ chn(){
 ##读取用户输入
 readinput(){
 
-	printhelp
+	
 	read -p "enter commond:" no
 	#read -p "enter name:" name
 	#echo you have entered $no, $name
@@ -67,7 +67,7 @@ readinput(){
 
 }
 
-
+printhelp
 readinput
 
 
