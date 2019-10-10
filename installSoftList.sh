@@ -15,6 +15,7 @@ printhelp(){
 	echo 'chnkrl  更换内核来安装锐速，更换内核后会重启'
 	echo 'ruisu  安装锐速（需要先更换内核心，执行chnkrl命令)，默认一路回车即可'
 	echo 'fastcmd  快捷命令，如welcome加载bash_profile等'
+	echo 'clsselinux  关闭selinux'
 	echo 'q  退出'
 	echo '########################################'
 	
