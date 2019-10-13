@@ -12,6 +12,7 @@ fi
 iptables -A OUTPUT -p tcp --sport 1521
 iptables -A OUTPUT -p tcp --sport 1522
 iptables -A OUTPUT -p tcp --sport 1433
+iptables -A OUTPUT -p tcp --sport 1434
 iptables -A OUTPUT -p tcp --sport 3306
 iptables -A OUTPUT -p tcp --sport 21
 iptables -A OUTPUT -p tcp --sport 33891
