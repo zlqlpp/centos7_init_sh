@@ -16,12 +16,29 @@ printhelp(){
 	echo 'ruisu  安装锐速（需要先更换内核心，执行chnkrl命令)，默认一路回车即可'
 	echo 'fastcmd  快捷命令，如welcome加载bash_profile等'
 	echo 'clsselinux  关闭selinux'
+	echo 'installBesttrace   安装besttrace路由查询工具'
 	echo 'q  退出'
 	echo '########################################'
 	
 	readinput
 }
-
+installBesttrace(){
+	if ! test -d ~/.zlq/ 
+		then 
+	mkdir ~/.zlq/
+	fi
+	
+	cd ~/.zlq/
+	mkdir besttrace
+	cd  besttrace
+	wget https://cdn.ipip.net/17mon/besttrace4linux.zip
+	unzip besttrace4linux.zip
+	chmod +x besttrace
+	echo "PATH=$PATH:/root/.zlq/besttrace/" >> ~/.bash_profile
+	echo "export PATH" >> ~/.bash_profile
+	source ~/.bash_profile
+	
+}
 ##添加一些命令别名使操作更快捷
 fastcmd(){
 	if ! test -d ~/.zlq/ 
@@ -184,6 +201,9 @@ readinput(){
 		;;
 		fastcmd)
 		fastcmd
+		;;
+		installBesttrace)
+		installBesttrace
 		;;
 		q)
 		exit
