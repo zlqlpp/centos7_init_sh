@@ -159,6 +159,7 @@ EOF
 
 #6.启动
   setsid ss-server -c /etc/shadowsocks/ss.json -u &
+cd ../;rm -rf shadowsocks-libev;
 
 }
 ##################开发套件
