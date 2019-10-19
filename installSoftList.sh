@@ -17,10 +17,30 @@ printhelp(){
 	echo 'fastcmd  快捷命令，如welcome加载bash_profile等'
 	echo 'clsselinux  关闭selinux'
 	echo 'installBesttrace   安装besttrace路由查询工具'
+	echo 'youtubedl 安装youtube-dl 视频下载工具'
+	echo 'ffmpeg 安装ffmpeg视频编辑和推流工具'
 	echo 'q  退出'
 	echo '########################################'
 	
 	readinput
+}
+ffmpeg(){
+	wget http://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz;
+	tar -xvf yasm-1.3.0.tar.gz;
+	cd yasm-1.3.0/;
+	./configure && make && make install;
+	cd ../;rm -rf yasm*;
+
+	wget http://www.ffmpeg.org/releases/ffmpeg-3.4.tar.gz;
+	tar -xvf ffmpeg-3.4.tar.gz;
+	cd ffmpeg-3.4/;
+	./configure && make && make install;
+	cd ../;rm -rf ffmpeg;
+}
+youtubedl(){
+
+	sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl;
+	sudo chmod a+rx /usr/local/bin/youtube-dl;
 }
 installBesttrace(){
 	if ! test -d ~/.zlq/ 
@@ -204,6 +224,12 @@ readinput(){
 		;;
 		installBesttrace)
 		installBesttrace
+		;;
+		youtubedl)
+		youtubedl
+		;;
+		ffmpeg)
+		ffmpeg
 		;;
 		q)
 		exit
