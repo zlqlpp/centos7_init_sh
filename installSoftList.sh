@@ -187,7 +187,7 @@ chn(){
 	#
 	localectl set-locale LANG=zh_CN.utf8
 	#安装中文字体
-	yum install ibus-table-chinese*
+	yum install ibus-table-chinese* -y
 	#重新连接终端即可
 	readinput
 
