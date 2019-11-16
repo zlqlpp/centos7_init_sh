@@ -66,9 +66,9 @@ fastcmd(){
 	mkdir ~/.zlq/
 	fi
 	cd ~/.zlq/
-	rm -rf s_ssMonitor_netstat_iptables.sh set-iptables.sh
-	wget https://raw.githubusercontent.com/zlqlpp/centos7_init_sh/master/s_ssMonitor_netstat_iptables.sh
-	wget https://raw.githubusercontent.com/zlqlpp/centos7_init_sh/master/set-iptables.sh
+	rm -rf include/s_ssMonitor_netstat_iptables.sh include/set-iptables.sh
+	wget https://raw.githubusercontent.com/zlqlpp/centos7_init_sh/master/include/s_ssMonitor_netstat_iptables.sh
+	wget https://raw.githubusercontent.com/zlqlpp/centos7_init_sh/master/include/set-iptables.sh
 	 
 	echo "alias welcome='source ~/.bash_profile'"  >> ~/.bash_profile
 	echo "alias monitor='bash ~/.zlq/s_ssMonitor_netstat_iptables.sh'" >> ~/.bash_profile
