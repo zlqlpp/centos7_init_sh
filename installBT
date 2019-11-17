@@ -25,6 +25,8 @@ setenforce 0
 echo  'install ok'
  
  
+#https://blog.uuz.moe/2017/02/install_transmission/
+#http://your.domain.name:9091
 #---------------------------------------------
 #
 #systemctl stop transmission-daemon.service; 
