@@ -51,6 +51,8 @@ fastcmd(){
 	echo "alias monitor='bash ~/.zlq/s_ssMonitor_netstat_iptables.sh'" >> ~/.bash_profile
 	echo "alias setiptables='bash ~/.zlq/set-iptables.sh'" >> ~/.bash_profile
 	source ~/.bash_profile
+	
+	echo 'alias welcome    monitor   setiptables '
 }
 
 ##################----c
