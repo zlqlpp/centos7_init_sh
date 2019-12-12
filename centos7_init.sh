@@ -20,6 +20,7 @@ printhelp(){
 	echo 'j 	安装ss-server服务端,默认启动端口1521，密码123456,加密aes-256-gcm'
 	echo 'k  	安装中文'
 	echo 'l  	永远关闭selinux'
+	echo 'm  	一键lnmp'
 	echo 'q  	退出'
 	echo '########################################'
 	
@@ -51,7 +52,6 @@ fastcmd(){
 	echo "alias monitor='bash ~/.zlq/s_ssMonitor_netstat_iptables.sh'" >> ~/.bash_profile
 	echo "alias setiptables='bash ~/.zlq/set-iptables.sh'" >> ~/.bash_profile
 	source ~/.bash_profile
-	
 	echo 'alias welcome    monitor   setiptables '
 }
 
@@ -269,11 +269,18 @@ chn(){
 
 }
 closeSelinuxforever(){
-echo '修改/etc/selinux/config 文件'
-
-echo '将SELINUX=enforcing改为SELINUX=disabled'
+	echo '修改/etc/selinux/config 文件'
+	echo '将SELINUX=enforcing改为SELINUX=disabled'
 }
-
+lnmp(){
+	cd ~
+	wget http://mirrors.linuxeye.com/lnmp-full.tar.gz
+	tar xzf lnmp-full.tar.gz
+	#tar xzf lnmp.tar.gz
+	cd lnmp # 如果需要修改目录(安装、数据存储、Nginx日志)，请修改options.conf文件
+	./install.sh
+	cd ~;rm -rf lnmp
+}
 ##读取用户输入
 readinput(){
 	read -p "enter commond:" no
@@ -316,6 +323,9 @@ readinput(){
 		;; 
 		l)
 		closeSelinuxforever;printhelp
+		;;
+		m)
+		lnmp;printhelp
 		;;
 		q)
 		exit
