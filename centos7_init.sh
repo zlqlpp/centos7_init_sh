@@ -326,5 +326,5 @@ readinput(){
 }
 
 printhelp
-readinput
+
 
