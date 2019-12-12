@@ -280,46 +280,46 @@ readinput(){
 
 	case $no in 
 		a)
-		init 
+		init ;printhelp
 		;;
 		b)
-		fastcmd
+		fastcmd;printhelp
 		;;
 		c)
-		crt_1GB_swap
+		crt_1GB_swap;printhelp
 		;;
 		d)
-		youtubedl
+		youtubedl;printhelp
 		;;
 		e)
-		ffmpega
+		ffmpega;printhelp
 		;;
 		f)
-		installBesttrace
+		installBesttrace;printhelp
 		;;
 		g)
-		install_web_bt
+		install_web_bt;printhelp
 		;;
 		h)
-		chnkrl
+		chnkrl;printhelp
 		;;
 		i)
-		ruisu
+		ruisu;printhelp
 		;;
 		j)
-		ss
+		ss;printhelp
 		;;
 		k)
-		chn
+		chn;printhelp
 		;; 
 		l)
-		closeSelinuxforever
+		closeSelinuxforever;printhelp
 		;;
 		q)
 		exit
 		;;
 		*)
-		echo '请输入有效的命令 '	
+		echo '请输入有效的命令(abcdefghijklq) '	
 	esac
 }
 
