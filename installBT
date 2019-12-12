@@ -15,20 +15,15 @@ sed -i '/rpc-username/c "rpc-username": "admin",' /var/lib/transmission/.config/
 sed -i '/"rpc-whitelist"/c "rpc-whitelist": "0.0.0.0",'             /var/lib/transmission/.config/transmission-daemon/settings.json            ;
 sed -i '/"rpc-whitelist-enabled"/c "rpc-whitelist-enabled": false,' /var/lib/transmission/.config/transmission-daemon/settings.json            ;
 
-
- systemctl start transmission-daemon.service
-
+systemctl start transmission-daemon.service
 
 setenforce 0
 
-
 echo  'install ok'
- 
  
 #https://blog.uuz.moe/2017/02/install_transmission/
 #http://your.domain.name:9091
 #---------------------------------------------
-#
 #systemctl stop transmission-daemon.service; 
 #systemctl start transmission-daemon.service
 #
@@ -36,12 +31,10 @@ echo  'install ok'
 #
 #vim /var/lib/transmission/.config/transmission-daemon/settings.json
 #
-#
 #alias rm='rm -rf '
 #alias welcom='source ~/.bash_profile'
 #alias netntlp='netstat -ntlp'
 #alias ipt='iptables -nvL'
-#
 #
 #systemctl stop transmission-daemon.service;
 #rm /var/lib/transmission/.config/transmission-daemon/settings.json;
