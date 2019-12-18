@@ -21,6 +21,7 @@ printhelp(){
 	echo 'k  	安装中文'
 	echo 'l  	永远关闭selinux'
 	echo 'm  	一键lnmp'
+	echo 'n  	 安装Python3'
 	echo 'q  	退出'
 	echo '########################################'
 	
@@ -281,6 +282,23 @@ lnmp(){
 	./install.sh
 	cd ~;rm -rf lnmp
 }
+python3(){
+#安装必要工具 yum-utils ，它的功能是管理repository及扩展包的工具 (主要是针对repository)
+ sudo yum install yum-utils -y
+#使用yum-builddep为Python3构建环境,安装缺失的软件依赖,使用下面的命令会自动处理.
+  sudo yum-builddep python -7
+#完成后下载Python3的源码包 
+ curl -O https://www.python.org/ftp/python/3.8.0/Python-3.8.0rc1.tgz
+#最后一步，编译安装Python3，默认的安装目录是 /usr/local 如果你要改成其他目录可以在编译(make)前使用 configure 命令后面追加参数 “–prefix=/alternative/path” 来完成修改。
+ tar xf Python-3.8.0rc1.tgz
+ cd Python-3.8.0rc1
+ ./configure
+ make; make install
+#至此你已经在你的CentOS系统中成功安装了python3、pip3、setuptools，查看python版本
+#python3 -V
+#如果你要使用Python3作为python的默认版本，你需要修改一下 bashrc 文件，增加一行alias参数
+echo "alias python='/usr/local/bin/python3.5'" >> ~/.bash_profile
+}
 ##读取用户输入
 readinput(){
 	read -p "enter commond:" no
@@ -326,6 +344,9 @@ readinput(){
 		;;
 		m)
 		lnmp;printhelp
+		;;
+		n)
+		python3;printhelp
 		;;
 		q)
 		exit
