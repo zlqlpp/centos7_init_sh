@@ -231,7 +231,7 @@ ss(){
 	rm -rf shadowsocks-;
 	#5 shadowsocks-libev 配置文件
 	mkdir /etc/shadowsocks;
-	cat <<-EOF > /etc/shadowsocks/ss.json
+	cat <<-EOF > /etc/shadowsocks/1521_ss.json
 	{
 			"server":"0.0.0.0",
 			"server_port":1521,
@@ -243,7 +243,7 @@ ss(){
 	EOF
 	
 	#6.启动
-	setsid ss-server -c /etc/shadowsocks/ss.json -u &
+	setsid ss-server -c /etc/shadowsocks/1521_ss.json -u &
 	cd ../;rm -rf shadowsocks-libev;
 
 }
