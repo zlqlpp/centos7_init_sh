@@ -12,6 +12,7 @@ printhelp(){
 	echo 'b  	设置别名，welcome,setiptables,monitor'
 	echo 'c     创建1GB 的swap'
 	echo 'd  	安装youtubedl'
+	echo 'dlp  	安装yt-dlp'
 	echo 'e  	安装ffmpeg'
 	echo 'f  	安装besttrace路由查询工具'
 	echo 'g  	安装web下载bt软件'
@@ -72,6 +73,13 @@ youtubedl(){
 	sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl;
 	sudo chmod a+rx /usr/local/bin/youtube-dl;
 }
+
+##################----yt-dlp
+yt-dlp(){
+	sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
+        sudo chmod a+rx /usr/local/bin/yt-dlp
+}
+
 
 
 ##################----e
@@ -317,6 +325,9 @@ readinput(){
 		;;
 		d)
 		youtubedl;printhelp
+		;;
+		dlp)
+		yt-dlp;printhelp
 		;;
 		e)
 		ffmpega;printhelp
