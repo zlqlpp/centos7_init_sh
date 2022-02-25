@@ -93,7 +93,7 @@ ffmpega(){
 	wget http://www.ffmpeg.org/releases/ffmpeg-3.4.tar.gz;
 	tar -xvf ffmpeg-3.4.tar.gz;
 	cd ffmpeg-3.4/;
-	./configure && make && make install;
+	./configure --enable-libfreetype --enable-avfilter && make && make install;
 	cd ../;rm -rf ffmpeg;
 }
 
